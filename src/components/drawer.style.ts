@@ -30,11 +30,11 @@ export const DrawerContainer = styled.nav<TDrawerProps>`
 		font-weight: bold;
 		letter-spacing: 0.5rem;
 		color: ${({ theme }) => theme.primaryDark};
-		text-decoration: none;
-		transition: color 0.3s linear;
+		text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+		transition: text-decoration-color 400ms;
 
 		&:hover {
-			color: ${({ theme }) => theme.primaryHover};
+			text-decoration-color: ${({ theme }) => theme.primaryDark};
 		}
 	}
 `;
