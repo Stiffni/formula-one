@@ -42,7 +42,7 @@ export const Circuits = () => {
 	}, []);
 
 	return (
-		<Page>
+		<>
 			{
 				circuitData && circuitData.map((circuit: TCircuit) => {
 					return (
@@ -56,7 +56,6 @@ export const Circuits = () => {
 					)
 				})
 			}
-		</Page>
-
+		</>
 	);
 };

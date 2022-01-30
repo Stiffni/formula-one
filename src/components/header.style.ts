@@ -17,5 +17,10 @@ export const HeaderContainer = styled.header`
 	a {
 		color: ${({ theme }) => theme.primaryLight};
 		text-decoration: none;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			color: ${({ theme }) => theme.primaryAccent};
+		}
 	}
 `

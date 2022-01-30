@@ -8,6 +8,11 @@ export const GlobalStyles = createGlobalStyle`
 		overflow-x: hidden;
 		width: 100%;
 	}
+	@media (min-width: ${({ theme }) => theme.desktopMin}){
+		html {
+			font-size: 18px;
+		}
+	}
 	*, *::after, *::before {
 	box-sizing: border-box;
 	}
@@ -30,12 +35,6 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: 1.25rem;
 	}
 	h4 {
-		font-size: 1.25rem;
-	}
-
-	@media (min-width: ${({ theme }) => theme.desktopMin}){
-		html {
-			font-size: 18px;
-		}
+		font-size: 1.2rem;
 	}
 `;
