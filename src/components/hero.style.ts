@@ -4,22 +4,31 @@ import heroImageLarge from '../assets/hero/hero-large.png';
 import heroImageFull from '../assets/hero/hero-full.png';
 
 export const HeroContainer = styled.div`
-	height: 100vh;
+	position: relative;
 	width: 100vw;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	height: 100vh;
 
-	background-image: url(${heroImageMobile});
-	box-shadow: inset 0 5em 4em ${({ theme }) => theme.primaryDark};
-	filter: grayscale(35%);
+	&:before{
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(${heroImageMobile});
+		box-shadow: inset 0 5em 4em ${({ theme }) => theme.primaryDark};
+		filter: grayscale(35%);
 
-	@media (min-width: ${({ theme }) => theme.laptopMin}) {
-		background-image: url(${heroImageLarge});
-	}
+		@media (min-width: ${({ theme }) => theme.laptopMin}) {
+			background-image: url(${heroImageLarge});
+		}
 
-	@media (min-width: ${({ theme }) => theme.desktopMin}) {
-		background-image: url(${heroImageFull}) ;
+		@media (min-width: ${({ theme }) => theme.desktopMin}) {
+			background-image: url(${heroImageFull}) ;
+		}
 	}
 `;
 
@@ -33,8 +42,4 @@ export const HeroHeader = styled.div`
 	top: 15%;
 	font-style: italic;
 	color: ${({ theme }) => theme.primaryLight}
-
-	@media (min-width: ${({ theme }) => theme.laptopMin}) {
-		background-image: url(${heroImageFull});
-	}
 `

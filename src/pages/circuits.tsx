@@ -8,22 +8,30 @@ type TLocation = {
 	long: number;
 	locality: string;
 }
-type TCircuitResponse = {
+type TCircuit = {
 	Location: TLocation;
 	circuitId: string;
 	circuitName: string;
 	url: string;
 }
 
+type TCircuitResponse = {
+	MRData: {
+		CircuitTable: {
+			Circuits: TCircuit[];
+		}
+	}
+}
+
 export const Circuits = () => {
-	let [circuitData, setCircuitData] = useState<any>(null);
+	let [circuitData, setCircuitData] = useState<TCircuit[] | null>(null);
 	const getCircuits = () => {
 		const headers = {
 			'Accept': 'application/json'
 		}
 		fetch('http://ergast.com/api/f1/circuits.json', { headers })
 			.then((response) => response.json())
-			.then((data) => {
+			.then((data: TCircuitResponse) => {
 				setCircuitData(data['MRData']['CircuitTable']['Circuits'])
 			});
 
@@ -35,7 +43,7 @@ export const Circuits = () => {
 	return (
 		<Page>
 			{
-				circuitData && circuitData.map((circuit: any) => {
+				circuitData && circuitData.map((circuit: TCircuit) => {
 					return (
 						<Card
 							key={circuit.circuitId}
