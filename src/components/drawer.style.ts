@@ -4,12 +4,6 @@ type TDrawerProps = {
 	open: boolean;
 };
 
-/*
-		@media (max-width: ${({ theme }) => theme.tabletMin}) {
-			font-size: 1.5rem;
-		}
-*/
-
 export const DrawerContainer = styled.nav<TDrawerProps>`
 	position: absolute;
 	display: flex;

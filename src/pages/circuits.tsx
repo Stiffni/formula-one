@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from '../components/card';
+import { CircuitInfo } from '../components/circuitInfo';
 import { Page } from '../components/page';
 
 type TLocation = {
@@ -45,11 +46,13 @@ export const Circuits = () => {
 			{
 				circuitData && circuitData.map((circuit: TCircuit) => {
 					return (
-						<Card
-							key={circuit.circuitId}
-							name={circuit.circuitName}
-							country={circuit.Location.country}
-						/>
+						<Card>
+							<CircuitInfo
+								key={circuit.circuitId}
+								name={circuit.circuitName}
+								country={circuit.Location.country}
+							/>
+						</Card>
 					)
 				})
 			}

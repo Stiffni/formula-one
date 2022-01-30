@@ -1,14 +1,9 @@
 import { CardContainer } from './card.style';
 
-type TCardProps = {
-	name: string,
-	country: string
-}
-export const Card = ({name, country}: TCardProps) => {
+export const Card:React.FC = ({children}) => {
 	return (
 		<CardContainer>
-			<h3>{name}</h3>
-			<h3>{country}</h3>
+			{children}
 		</CardContainer>
 	)
 }
