@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { LayoutContainer } from './layout.style';
 import { Hamburger } from './hamburger';
 import { Header } from './header';
-import { Menu } from './menu';
+import { Drawer } from './drawer';
 
 export const Layout = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -10,11 +11,11 @@ export const Layout = () => {
 		setMenuOpen(!menuOpen);
 	}
 	return (
-		<>
+		<LayoutContainer>
 			<Header />
 			<Hamburger open={menuOpen} onClick={handleMenuClick}/>
-			<Menu open={menuOpen} onClick={handleMenuClick}/>
+			<Drawer open={menuOpen} onClick={handleMenuClick}/>
 			<Outlet />
-		</>
+		</LayoutContainer>
 	);
 };

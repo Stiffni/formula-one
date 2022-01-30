@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-type TMenuProps = {
+type TDrawerProps = {
 	open: boolean;
 };
 
@@ -10,7 +10,7 @@ type TMenuProps = {
 		}
 */
 
-export const MenuContainer = styled.nav<TMenuProps>`
+export const DrawerContainer = styled.nav<TDrawerProps>`
 	position: absolute;
 	display: flex;
 	flex-direction: column;
