@@ -8,7 +8,7 @@ export const HeroContainer = styled.div`
 	width: 100vw;
 	height: 100vh;
 
-	&:before{
+	&:before {
 		position: absolute;
 		content: '';
 		top: 0;
@@ -41,5 +41,9 @@ export const HeroHeader = styled.div`
 	left: 50%;
 	top: 15%;
 	font-style: italic;
-	color: ${({ theme }) => theme.primaryLight}
-`
+	color: ${({ theme }) => theme.primaryLight};
+
+	@media (min-width: ${({ theme }) => theme.laptopMin}) {
+		left: 60%;
+	}
+`;
