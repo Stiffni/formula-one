@@ -32,4 +32,10 @@ export const GlobalStyles = createGlobalStyle`
 	h4 {
 		font-size: 1.25rem;
 	}
+
+	@media (min-width: ${({ theme }) => theme.desktopMin}){
+		html {
+			font-size: 18px;
+		}
+	}
 `;
