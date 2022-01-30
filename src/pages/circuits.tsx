@@ -42,13 +42,14 @@ export const Circuits = () => {
 	}, []);
 
 	return (
-		<>
+		<Page>
 			{
 				circuitData && circuitData.map((circuit: TCircuit) => {
 					return (
-						<Card>
+						<Card
+							key={circuit.circuitId}
+						>
 							<CircuitInfo
-								key={circuit.circuitId}
 								name={circuit.circuitName}
 								country={circuit.Location.country}
 							/>
@@ -56,6 +57,6 @@ export const Circuits = () => {
 					)
 				})
 			}
-		</>
+		</Page>
 	);
 };
