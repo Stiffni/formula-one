@@ -21,7 +21,7 @@ export const Circuits = () => {
 					)
 				})
 			}
-			<div>{error && 'error'}</div>
+			<div>{error && 'Uh oh! We had some trouble finding these circuits... Try again soon!'}</div>
 			<div>{loading && 'loading...'}</div>
 		</Page>
 	);
