@@ -1,9 +1,12 @@
+import Fade from 'react-reveal/Fade';
 import { CardContainer } from './card.style';
 
 export const Card:React.FC = ({children}) => {
 	return (
-		<CardContainer>
-			{children}
-		</CardContainer>
+		<Fade bottom>
+			<CardContainer>
+				{children}
+			</CardContainer>
+		</Fade>
 	)
 }
