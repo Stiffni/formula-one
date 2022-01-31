@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import heroImageMobile from '../assets/hero/hero-mobile.png';
-import heroImageLarge from '../assets/hero/hero-large.png';
-import heroImageFull from '../assets/hero/hero-full.png';
+import heroImageMobile from '../assets/hero/hero-mobile.webp';
+import heroImageLarge from '../assets/hero/hero-large.webp';
+import heroImageFull from '../assets/hero/hero-full.webp';
 
 export const HeroContainer = styled.div`
 	position: relative;

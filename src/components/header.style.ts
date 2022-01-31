@@ -8,6 +8,11 @@ export const HeaderContainer = styled.header`
 	left: 2rem;
 	top: 1.5rem;
 	z-index: 5;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		transform: scale(1.1);
+	}
 
 	h1 {
 		margin: 0;
