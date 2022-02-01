@@ -14,11 +14,12 @@ type TCircuit = {
 	url: string;
 }
 
-export const GetCircuits = () => {
+export const GetCircuits = (pageNumber: number) => {
 	const [loading, setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<boolean>(false);
 	const [circuits, setCircuits] = useState<TCircuit[] | []>([]);
-	const maxResultsPerRequest = 100;
+	const [hasMore, setHasMore] = useState(true);
+	const maxResultsPerRequest = 10;
 
 	useEffect(() => {
 		setLoading(true);
@@ -27,15 +28,17 @@ export const GetCircuits = () => {
 		axios({
 			method: 'GET',
 			url: 'http://ergast.com/api/f1/circuits.json',
-			params: { limit: maxResultsPerRequest },
+			params: { limit: maxResultsPerRequest, offset: maxResultsPerRequest * pageNumber },
 		}).then(res => {
+			const circuitData = res.data['MRData']['CircuitTable']['Circuits'];
 			setCircuits(prevCircuits => {
-				return [...prevCircuits, ...res.data['MRData']['CircuitTable']['Circuits']]
-			})
+				return [...prevCircuits, ...circuitData]
+			});
+			setHasMore(res.data['MRData'].total > (maxResultsPerRequest * pageNumber + circuitData.length))
 			setLoading(false);
 		}).catch(err => {
 			setError(true);
 		})
-	}, [])
-	return {loading, error, circuits};
+	}, [pageNumber])
+	return {loading, hasMore, error, circuits};
 }

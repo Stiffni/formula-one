@@ -1,12 +1,18 @@
+import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { CardContainer } from './card.style';
 
-export const Card:React.FC = ({children}) => {
-	return (
-		<Fade bottom>
-			<CardContainer>
-				{children}
-			</CardContainer>
-		</Fade>
-	)
+type TCardProps = {
+	children: React.ReactNode
 }
+export const Card = React.forwardRef<HTMLDivElement, TCardProps>(({children}, ref) => {
+	return (
+		<div ref={ref}>
+			<Fade bottom>
+				<CardContainer>
+					{children}
+				</CardContainer>
+			</Fade>
+		</div>
+	)
+});

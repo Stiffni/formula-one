@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ReactComponent as Pin } from '../assets/pin.svg';
 
 export const StyledCircuitInfo = styled.div`
 	color: ${({ theme }) => theme.primaryDark};
@@ -11,7 +12,22 @@ export const StyledCircuitInfo = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-content: space-between;
-	h4 {
-		text-transform: uppercase;
+
+	h2 {
+		margin-bottom: 0;
 	}
+
+	h3 {
+		text-transform: uppercase;
+		display: inline-block;
+		vertical-align: bottom;
+		padding-left: 0.5rem;
+	}
+`
+
+export const StyledPin = styled(Pin)`
+	width: 1.5rem;
+	height: 100%;
+	fill: theme.primaryDark;
+	display: inline-block;
 `

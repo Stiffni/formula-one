@@ -1,6 +1,4 @@
-import { StyledCircuitInfo } from './circuitInfo.style'
-import { ReactComponent as Pin } from '../assets/pin.svg';
-import { theme } from '../theme';
+import { StyledCircuitInfo, StyledPin } from './circuitInfo.style'
 
 type TCircuitInfoProps = {
 	name: string,
@@ -10,10 +8,10 @@ type TCircuitInfoProps = {
 export const CircuitInfo = ({name, country}: TCircuitInfoProps) => {
 	return (
 		<StyledCircuitInfo>
-			<div><h3>{name}</h3></div>
+			<div><h2>{name}</h2></div>
 			<div>
-				<Pin width={'1.5rem'} height={'100%'} fill={theme.primaryDark} style={{display: 'inline-block'}} />
-				<h4 style={{display: 'inline-block', verticalAlign: 'bottom', paddingLeft:'0.5rem'}}>{country}</h4>
+				<StyledPin/>
+				<h3>{country}</h3>
 			</div>
 		</StyledCircuitInfo>
 	)

@@ -4,7 +4,7 @@ import { HeaderContainer } from './header.style';
 export const Header = () => {
 	return (
 		<HeaderContainer>
-			<h1><Link to='home'>F1</Link></h1>
+			<h1><Link to='/'>F1</Link></h1>
 		</HeaderContainer>
 	)
 }

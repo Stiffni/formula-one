@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Circuits } from './pages/circuits';
 import { Home } from './pages/home';
+import { NotFound } from './pages/notFound';
 import { Layout } from './components/layout';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
@@ -17,7 +18,7 @@ function App() {
 					<Route path='/' element={<Layout />}>
 						<Route index element={<Home />} />
 						<Route path='/circuits' element={<Circuits />} />
-						<Route path='*' element={<Home />} />
+						<Route path='*' element={<NotFound />} />
 					</Route>
 				</Routes>
 			</>
