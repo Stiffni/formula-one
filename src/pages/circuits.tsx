@@ -3,11 +3,11 @@ import { Card } from '../components/card';
 import { CircuitInfo } from '../components/circuitInfo';
 import { Page } from '../components/page';
 import { Message } from '../components/message';
-import { GetCircuits } from '../hooks/getCircuits';
+import { useCircuits } from '../hooks/useCircuits';
 
 export const Circuits = () => {
 	const [pageNumber, setPageNumber] = useState(0);
-	const {circuits, hasMore, loading, error} = GetCircuits(pageNumber);
+	const {circuits, hasMore, loading, error} = useCircuits(pageNumber);
 	const observer = useRef<IntersectionObserver | null>(null);
 
 	const lastCircuitRef = useCallback((node: HTMLDivElement) => {
